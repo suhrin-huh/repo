@@ -6,8 +6,15 @@
 
 ## 강의 목차
 
-### section 1. 왜 이강의가 필요할까요?
+### Chapter 1. 왜 이강의가 필요할까요?
 
 - 강의를 만든 이유
 - 비싼 유지비용으로 배포가 불가능한 백엔드 문제
-- 다양한 DB가 당신의 경쟁력력
+- 다양한 DB가 당신의 경쟁력
+
+### Chapter 2. express codesandbox 환경설정
+
+- codesandbox 계정 만들기
+- nodejs 설정
+- express 설정
+- 기본적인 라우팅 설정
