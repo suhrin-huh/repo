@@ -34,12 +34,78 @@ e.g. Page Routing, Optimizations, Server Pre Rendering 등 기본 제공
 
 ## 2. Next.js 사전렌더링 이해하기
 
-### 사전 렌더링이란?
+### CSR(Client Side Rendering)
 
-![이미지](../assets/1_!.png)
+![이미지](../assets/1_2.png)
+
+- 기존의 리액트 앱의 CSR(Client Side Rendering)은 초기 접속 이후 페이지 이동을 빠르게 처리 가능 but 초기 접속이 느리다.
+
+### 사전렌더링
+
+![이미지](../assets/1_1.jpg)
 
 - 브라우저의 요청에 사전에 렌더링이 완료된 HTML을 응답하는 렌더링 방식
 - Client Side Rendering의 단점을 효율적으로 해결하는 기술
-- 기존의
+- JS 코드가 html에 적용되는 Hydration /
+
+![이미지](../assets/1_3.jpg)
 
 ## 3. 실습용 백엔드 서버 세팅하기
+
+### 초기 설정
+
+- 실전과 같은 환경에서 공부할 수 있도록 백엔드 서버 세팅하기  
+  (1) [실습용 백엔드 서버](https://github.com/winterlood/onebite-books-server)  
+  (2) [Supabase](https://supabase.com/)
+
+```bash
+// 의존성 설치하기
+npm i
+
+// DB를 초기화하기
+npx prisma db push
+
+// => ✔ Generated Prisma Client (v5.13.0) to .\node_modules\@prisma\client in 51ms
+
+
+```
+
+![이미지](../assets/1_4.jpg)
+
+- supabase에 DB가 생성된 것을 확인할 수 있다.
+
+### 초기 데이터 넣기
+
+```bash
+// 초기 데이터 추가하기
+npm run seed
+```
+
+![이미지](../assets/1_5.jpg)
+
+- 추가 데이터가 생성되었다.
+
+### 실행하기
+
+```bash
+npm run build
+
+npm run start
+```
+
+- 'localhost:12345' 접속시 사용 가능
+- 'localhost:12345/api' 접속시 API 문서 확인 가능
+- `npx prisma studio`를 통해서 DB를 사용 가능
+
+## 4. 본격적인 학습에 앞서
+
+(1) Next.js란 어떤 기술인지?
+(2) 사전 렌더링이란?
+(3) 백엔드 설정
+
+### Next.js에서 제공하는 라우터
+
+- 페이지 라우터 : Next 초창기부터 제공되어 오던 구 버전의 라우터
+
+- 앱 라우터 : Next 13버전과 함께 처음으로 공개된 신규 라우터
+  다양한 신규 기능이 제공된다. ( 서버 컴포넌트 등...)
